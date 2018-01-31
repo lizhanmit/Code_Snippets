@@ -1,0 +1,37 @@
+/**
+	 * Delete a specific line in the txt file according to the content string. 
+	 * 
+	 * @param delString, string to be deleted
+	 */
+public void deleteSpecificLineInTxt(String delString) {
+		try {
+			FileReader fileReader = new FileReader("C:/111.txt");
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+	
+			String line = null;
+			ArrayList<String> lines = new ArrayList<String>(); 
+			
+			while ((line = bufferedReader.readLine()) != null) {
+				lines.add(line);
+			}
+			bufferedReader.close(); 
+			
+			lines.remove(lines.indexOf(delString));
+			
+			FileWriter fileWriter = new FileWriter("C:/111.txt");
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); 
+			
+			for (String writeLine : lines) {
+				if (writeLine != null) {
+					bufferedWriter.write(writeLine);
+					bufferedWriter.newLine();
+				}
+			}
+			bufferedWriter.close();
+			
+		} catch (FileNotFoundException ex) {
+			System.out.println("Unable to open file.");
+		} catch (IOException ex) {
+			System.out.println("Error reading file.");
+		}
+	}
