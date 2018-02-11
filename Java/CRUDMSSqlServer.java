@@ -2,8 +2,7 @@ import java.sql.*;
 
 /**
  * MS SQL Server CRUD JDBC.
- * 
- *
+ * Comment or uncomment corresponding part of the code to test. 
  */
 public class CRUDMSSqlServer {
 
@@ -43,7 +42,7 @@ public class CRUDMSSqlServer {
     		// insert data
     		String insertSql = "insert into dbo.Credit values(?, ?)";
     		pstmt = con.prepareStatement(insertSql);
-    		pstmt.setString(1, "cfa3e8c344cd95db548527e87b3339bd8d8a03f2fa65f679cdc17594d04371f094b1836ad15e08b513448de323df9a15");
+    		pstmt.setString(1, "1234567890");
     		pstmt.setInt(2, 12);
     		res = pstmt.executeUpdate();
     		System.out.println(res);
