@@ -35,9 +35,12 @@ public class CRUDMSSqlServer {
 //    		pstmt = con.prepareStatement(querySql);
 //    		pstmt.setString(1, "1234567890");
 //    		rs = pstmt.executeQuery();
-//    		while (rs.next()) {
+//    		if (rs.next()) {
 //    			System.out.println(rs.getInt("creditUsage"));
 //    		}
+//		else {
+//			System.out.println("null result");
+//		}
 
     		// insert data
     		String insertSql = "insert into dbo.Credit values(?, ?)";
